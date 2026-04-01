@@ -1,20 +1,35 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-  <modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.expleo</groupId>
-  <artifactId>selenium_basics</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <name>selenium_basics</name>
+    <groupId>selenium</groupId>
+    <artifactId>flipkart-test</artifactId>
+    <version>1.0</version>
 
-  <dependencies>
-      <dependency>
-          <groupId>org.seleniumhq.selenium</groupId>
-          <artifactId>selenium-java</artifactId>
-          <version>4.18.1</version>
-      </dependency>
-  </dependencies>
+    <dependencies>
+        <!-- Selenium -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>4.18.1</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Run main class -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <mainClass>main.demo</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
