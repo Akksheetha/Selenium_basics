@@ -17,9 +17,8 @@ public class ScreenshotExample {
 		driver.get("https://www.testim.io/");
 		TakesScreenshot screenshot = (TakesScreenshot)driver;
 		File source = screenshot.getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(source,new File(".SeleniumScreenshots/Screen.png"));
+		FileUtils.copyFile(source,new File("./Screenshots/Screen.png"));
 		System.out.println("Screenshot is captured");
 		driver.quit();
 	}
-
 }
