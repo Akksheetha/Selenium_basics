@@ -8,6 +8,10 @@ public class DataProviderClass {
 	public Object[][] dataprov(){
 		return new Object[][]{{"Selenium"},{"TestNG"},{"Automation"}};
 	}
+	@DataProvider(name="testData1")
+	public Object[][] dataprov1(){
+		return new Object[][]{{"Selenium"},{"TestNG"},{"Automation"}};
+	}
 	@DataProvider(name="Demo", parallel = true)
 	public Object[][] demoBlazecredentials(){
 		return new Object[][] {

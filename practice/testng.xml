@@ -11,7 +11,14 @@
   <parameter name="invalidusername1" value="Admin"></parameter>
   <parameter name="invalidpassword1" value="check"></parameter>
     <classes>
+    <class name="testng_practice.Assertion_practice"/>
+    <class name="testng_practice.DataProviderClass"/>
+    <class name="testng_practice.DataProviderDemo"/>
+    <class name="testng_practice.DataProviderTest"/>
+    <class name="testng_practice.NewTest"/>
       <class name="testng_practice.ParallelDataProvider"/>
+      <class name="testng_practice.ParameterizationDemo"/>
+      <class name="testng_practice.Params"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
