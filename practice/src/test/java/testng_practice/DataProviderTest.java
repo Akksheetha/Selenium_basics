@@ -3,9 +3,15 @@ package testng_practice;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
+
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 
 public class DataProviderTest {
@@ -17,8 +23,11 @@ public class DataProviderTest {
 	  WebDriver driver1 = driver.get();
 	  driver1.get("https://demoblaze.com/");
 	  driver1.findElement(By.id("login2")).click();
-	  driver1.findElement(By.id("loginusername")).sendKeys(user);
-	  driver1.findElement(By.id("loginpassword")).sendKeys(pass);
+	  WebDriverWait wait = new WebDriverWait(driver1, Duration.ofSeconds(10));
+	  WebElement username = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("loginusername")));
+	  username.sendKeys(user);
+	  WebElement password = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("loginpassword")));
+      password.sendKeys(pass);
   }
   @BeforeMethod
   public void beforeMethod() {
