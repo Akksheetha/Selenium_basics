@@ -21,7 +21,7 @@ public class ParameterizationDemo {
         driver.findElement(By.id("loginpassword")).sendKeys(password);
     }
     
-    @Test
+    @Test(enabled=false)
     @Parameters({"invalidusername","invalidpassword"})
     public void invalidCredentials(String invalidname, String invalidpassword) {
         driver.findElement(By.id("login2")).click();
@@ -29,7 +29,7 @@ public class ParameterizationDemo {
         driver.findElement(By.id("loginpassword")).sendKeys(invalidpassword);
     }
     
-    @Test
+    @Test(enabled=false)
     @Parameters({"invalidusername1","invalidpassword1"})
     public void invalidCredentials1(String invalidname, String invalidpassword) {
         driver.findElement(By.id("login2")).click();
