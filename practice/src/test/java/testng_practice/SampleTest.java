@@ -1,7 +1,5 @@
 package testng_practice;
 
-import static org.testng.Assert.assertEquals;
-
 import java.time.Duration;
 
 import org.openqa.selenium.Alert;
@@ -19,79 +17,90 @@ import org.testng.Assert;
 
 public class SampleTest {
 
-	    WebDriver driver;
-	    SoftAssert sa = new SoftAssert();
+    WebDriver driver;
 
-	    @BeforeMethod
-	    public void beforeMethod() {
-	  	  System.out.println("Start the test");
-	  	  ChromeOptions options=new ChromeOptions();
-	  	  driver=new ChromeDriver(options);
-	  	  options.addArguments("--start-maximize");
-//	  	  options.addArguments("--headless");
-	  	  driver.get("https://demoblaze.com/");
-	  	  driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-	    }
-	    
-	    @Test(priority = 2)
-	    public void validation() {
-	  	  driver.findElement(By.id("login2")).click();
-	  	  driver.findElement(By.id("loginusername")).sendKeys("Admin");
-	  	  driver.findElement(By.id("loginpassword")).sendKeys("admin");
-	      driver.findElement(By.xpath("//button[text()='Log in']")).click();
-	      
-	      WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-	      String actualUser = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("nameofuser"))).getText();
-	      sa.assertEquals(actualUser, "Welcome Admin", "Login failed");
-	      System.out.println("Login successful:"+actualUser);
-	      String title = driver.getTitle();
-	      sa.assertEquals(title, "STORE", "Page title mismatch");
-	      System.out.println("Page Title: "+title);
-	      sa.assertAll();
-	    }
-	    
-	    
-	    @Test(dependsOnMethods = "validation", priority = 1)
-	    public void invaliduser() {
-	    	driver.findElement(By.id("login2")).click();
-		  	driver.findElement(By.id("loginusername")).sendKeys("Admin");
-		  	driver.findElement(By.id("loginpassword")).sendKeys("admin!");
-		    driver.findElement(By.xpath("//button[text()='Log in']")).click();
-		    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		    try {
-		        Alert alert = wait.until(ExpectedConditions.alertIsPresent());
-		        String msg = alert.getText();
-		        System.out.println(msg);
-		        System.out.println("invalid name");
+    @BeforeMethod
+    public void beforeMethod() {
+        System.out.println("Start the test");
 
-		        Assert.assertTrue(msg.contains("Wrong"));
-		        alert.accept();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--start-maximized"); 
 
-		    } catch (Exception e) {
-		        String user = driver.findElement(By.id("nameofuser")).getText();
-		        System.out.println("Logged in: " + user);
-		        Assert.fail("Expected alert, but login succeeded");
-		    }
-	    }
-	    
-	    @Test(priority = 3)
-	    public void invalidpassword() {
-	    	driver.findElement(By.id("login2")).click();
-		  	driver.findElement(By.id("loginusername")).sendKeys("Admin");
-		  	driver.findElement(By.id("loginpassword")).sendKeys("admin");
-		    driver.findElement(By.xpath("//button[text()='Log in']")).click();
-		    
-		    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		    Alert alert = wait.until(ExpectedConditions.alertIsPresent());
-		    String alertMessage = alert.getText();
-		    System.out.println(alertMessage);
-		    Assert.assertEquals(alertMessage, "Wrong password.");
-		    alert.accept();
-	    }
+        driver = new ChromeDriver(options);
+        driver.get("https://demoblaze.com/");
+    }
 
-	    @AfterMethod
-	    public void after() {
-	        driver.quit();
-	    }
+    @Test
+    public void validation() {
 
+        SoftAssert sa = new SoftAssert();
+
+        driver.findElement(By.id("login2")).click();
+        driver.findElement(By.id("loginusername")).sendKeys("Admin");
+        driver.findElement(By.id("loginpassword")).sendKeys("admin");
+        driver.findElement(By.xpath("//button[text()='Log in']")).click();
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        String actualUser = wait.until(
+                ExpectedConditions.visibilityOfElementLocated(By.id("nameofuser"))
+        ).getText();
+
+        sa.assertEquals(actualUser, "Welcome Admin", "Login failed");
+        System.out.println("Login successful: " + actualUser);
+
+        String title = driver.getTitle();
+        sa.assertEquals(title, "STORE", "Page title mismatch");
+        System.out.println("Page Title: " + title);
+
+        sa.assertAll(); 
+    }
+
+    @Test(dependsOnMethods = "validation")
+    public void invaliduser() {
+
+        driver.findElement(By.id("login2")).click();
+        driver.findElement(By.id("loginusername")).sendKeys("wronguser"); 
+        driver.findElement(By.id("loginpassword")).sendKeys("admin");     
+        driver.findElement(By.xpath("//button[text()='Log in']")).click();
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        try {
+            Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+            String msg = alert.getText();
+
+            System.out.println("Alert message: " + msg);
+
+            Assert.assertEquals(msg, "Wrong password.");
+            alert.accept();
+
+        } catch (Exception e) {
+            Assert.fail("Expected alert, but login succeeded");
+        }
+    }
+
+    @Test
+    public void invalidpassword() {
+
+        driver.findElement(By.id("login2")).click();
+        driver.findElement(By.id("loginusername")).sendKeys("Admin");
+        driver.findElement(By.id("loginpassword")).sendKeys("wrongpassword"); 
+        driver.findElement(By.xpath("//button[text()='Log in']")).click();
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+        String alertMessage = alert.getText();
+
+        System.out.println("Alert message: " + alertMessage);
+
+        Assert.assertEquals(alertMessage, "Wrong password.");
+        alert.accept();
+    }
+
+    @AfterMethod
+    public void after() {
+        driver.quit();
+    }
 }

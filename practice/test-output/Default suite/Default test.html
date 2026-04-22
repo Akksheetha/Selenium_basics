@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>3/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>6/0/3</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Apr 21 11:36:17 IST 2026</td>
+<td>Started on:</td><td>Wed Apr 22 17:34:42 IST 2026</td>
 </tr>
-<tr><td>Total time:</td><td>14 seconds (14195 ms)</td>
+<tr><td>Total time:</td><td>38 seconds (38626 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,20 +76,134 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='testng_practice.DataProviderTest.login()'><b>login</b><br>Test class: testng_practice.DataProviderTest<br>Parameters: check, admin</td>
+<td title='testng_practice.TutorialsNinjaLoggingandListener.validLoginTest()'><b>validLoginTest</b><br>Test class: testng_practice.TutorialsNinjaLoggingandListener<br>Parameters: abc32@gmail.com, Password@123, valid</td>
 <td></td>
-<td>5</td>
-<td>testng_practice.DataProviderTest@128d2484</td></tr>
+<td>7</td>
+<td>testng_practice.TutorialsNinjaLoggingandListener@1800a575</td></tr>
 <tr>
-<td title='testng_practice.DataProviderTest.login()'><b>login</b><br>Test class: testng_practice.DataProviderTest<br>Parameters: Admin, 1234</td>
+<td title='testng_practice.TutorialsNinjaLoggingandListener.searchProduct()'><b>searchProduct</b><br>Test class: testng_practice.TutorialsNinjaLoggingandListener<br>Parameters: iPhone</td>
 <td></td>
-<td>5</td>
-<td>testng_practice.DataProviderTest@128d2484</td></tr>
+<td>3</td>
+<td>testng_practice.TutorialsNinjaLoggingandListener@1800a575</td></tr>
 <tr>
-<td title='testng_practice.DataProviderTest.login()'><b>login</b><br>Test class: testng_practice.DataProviderTest<br>Parameters: Admin, admin</td>
+<td title='testng_practice.TutorialsNinjaLoggingandListener.searchProduct()'><b>searchProduct</b><br>Test class: testng_practice.TutorialsNinjaLoggingandListener<br>Parameters: Macbook</td>
 <td></td>
-<td>5</td>
-<td>testng_practice.DataProviderTest@128d2484</td></tr>
+<td>1</td>
+<td>testng_practice.TutorialsNinjaLoggingandListener@1800a575</td></tr>
+<tr>
+<td title='testng_practice.TutorialsNinjaLoggingandListener.invalidLoginTest()'><b>invalidLoginTest</b><br>Test class: testng_practice.TutorialsNinjaLoggingandListener<br>Parameters: abc@gmail.com, 1234.0, invalid</td>
+<td></td>
+<td>9</td>
+<td>testng_practice.TutorialsNinjaLoggingandListener@1800a575</td></tr>
+<tr>
+<td title='testng_practice.TutorialsNinjaLoggingandListener.invalidLoginTest()'><b>invalidLoginTest</b><br>Test class: testng_practice.TutorialsNinjaLoggingandListener<br>Parameters: test@gmail.com, 4321.0, invalid</td>
+<td></td>
+<td>9</td>
+<td>testng_practice.TutorialsNinjaLoggingandListener@1800a575</td></tr>
+<tr>
+<td title='testng_practice.TutorialsNinjaLoggingandListener.searchProduct()'><b>searchProduct</b><br>Test class: testng_practice.TutorialsNinjaLoggingandListener<br>Parameters: Samsung</td>
+<td></td>
+<td>1</td>
+<td>testng_practice.TutorialsNinjaLoggingandListener@1800a575</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='testng_practice.TutorialsNinjaLoggingandListener.validLoginTest()'><b>validLoginTest</b><br>Test class: testng_practice.TutorialsNinjaLoggingandListener<br>Parameters: abc@gmail.com, 1234.0, invalid</td>
+<td><div><pre>org.testng.SkipException: Skipping invalid data
+	at testng_practice.TutorialsNinjaLoggingandListener.validLoginTest(TutorialsNinjaLoggingandListener.java:29)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:81)
+	at org.testng.internal.thread.Async$AsyncTask.run(Async.java:34)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1297180275", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1297180275'><pre>org.testng.SkipException: Skipping invalid data
+	at testng_practice.TutorialsNinjaLoggingandListener.validLoginTest(TutorialsNinjaLoggingandListener.java:29)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:81)
+	at org.testng.internal.thread.Async$AsyncTask.run(Async.java:34)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</pre></div></td>
+<td>0</td>
+<td>testng_practice.TutorialsNinjaLoggingandListener@1800a575</td></tr>
+<tr>
+<td title='testng_practice.TutorialsNinjaLoggingandListener.invalidLoginTest()'><b>invalidLoginTest</b><br>Test class: testng_practice.TutorialsNinjaLoggingandListener<br>Parameters: abc32@gmail.com, Password@123, valid</td>
+<td><div><pre>org.testng.SkipException: Skipping valid data
+	at testng_practice.TutorialsNinjaLoggingandListener.invalidLoginTest(TutorialsNinjaLoggingandListener.java:49)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:81)
+	at org.testng.internal.thread.Async$AsyncTask.run(Async.java:34)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1436583285", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1436583285'><pre>org.testng.SkipException: Skipping valid data
+	at testng_practice.TutorialsNinjaLoggingandListener.invalidLoginTest(TutorialsNinjaLoggingandListener.java:49)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:81)
+	at org.testng.internal.thread.Async$AsyncTask.run(Async.java:34)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</pre></div></td>
+<td>0</td>
+<td>testng_practice.TutorialsNinjaLoggingandListener@1800a575</td></tr>
+<tr>
+<td title='testng_practice.TutorialsNinjaLoggingandListener.validLoginTest()'><b>validLoginTest</b><br>Test class: testng_practice.TutorialsNinjaLoggingandListener<br>Parameters: test@gmail.com, 4321.0, invalid</td>
+<td><div><pre>org.testng.SkipException: Skipping invalid data
+	at testng_practice.TutorialsNinjaLoggingandListener.validLoginTest(TutorialsNinjaLoggingandListener.java:29)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:81)
+	at org.testng.internal.thread.Async$AsyncTask.run(Async.java:34)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1772090535", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1772090535'><pre>org.testng.SkipException: Skipping invalid data
+	at testng_practice.TutorialsNinjaLoggingandListener.validLoginTest(TutorialsNinjaLoggingandListener.java:29)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:81)
+	at org.testng.internal.thread.Async$AsyncTask.run(Async.java:34)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</pre></div></td>
+<td>0</td>
+<td>testng_practice.TutorialsNinjaLoggingandListener@1800a575</td></tr>
 </table><p>
 </body>
 </html>
