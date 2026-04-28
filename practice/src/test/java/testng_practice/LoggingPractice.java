@@ -39,24 +39,26 @@ public class LoggingPractice {
     }
 
     // 🔥 COMMON METHOD (handles click issue)
-    public void clickLogin() {
+    public void clickLogin() throws InterruptedException {
 
-        // Wait for carousel overlay to disappear
-        wait.until(ExpectedConditions.invisibilityOfElementLocated(
-                By.cssSelector(".carousel-item.active img")
-        ));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+
+        // Small wait for page load
+        Thread.sleep(3000);
 
         WebElement loginBtn = wait.until(
-                ExpectedConditions.elementToBeClickable(By.id("login2"))
+                ExpectedConditions.visibilityOfElementLocated(By.id("login2"))
         );
 
-        try {
-            loginBtn.click();
-        } catch (Exception e) {
-            // fallback if intercepted
-            ((JavascriptExecutor) driver)
-                    .executeScript("arguments[0].click();", loginBtn);
-        }
+        ((JavascriptExecutor) driver).executeScript(
+                "arguments[0].scrollIntoView({block:'center'});", loginBtn
+        );
+
+        Thread.sleep(1000);
+
+        ((JavascriptExecutor) driver).executeScript(
+                "arguments[0].click();", loginBtn
+        );
     }
 
     @Test(priority = 1)
