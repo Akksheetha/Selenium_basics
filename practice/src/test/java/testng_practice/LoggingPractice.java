@@ -6,7 +6,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -24,41 +23,39 @@ public class LoggingPractice {
     WebDriverWait wait;
 
     @BeforeMethod
-    public void setup() {
+    public void beforeMethod() {
         logger.info("Starting the test");
 
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--start-maximized");
 
         driver = new ChromeDriver(options);
-        wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
         driver.get("https://demoblaze.com/");
 
         logger.info("DemoBlaze Website opened");
     }
 
-    // 🔥 COMMON METHOD (handles click issue)
-    public void clickLogin() throws InterruptedException {
-
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-
-        // Small wait for page load
-        Thread.sleep(3000);
-
+    // ✅ Common reusable method to click login safely
+    public void clickLogin() {
         WebElement loginBtn = wait.until(
-                ExpectedConditions.visibilityOfElementLocated(By.id("login2"))
+                ExpectedConditions.elementToBeClickable(By.id("login2"))
         );
 
-        ((JavascriptExecutor) driver).executeScript(
-                "arguments[0].scrollIntoView({block:'center'});", loginBtn
-        );
+        // retry click if intercepted
+        for (int i = 0; i < 3; i++) {
+            try {
+                loginBtn.click();
+                return;
+            } catch (Exception e) {
+                logger.warn("Retrying login click due to interception...");
+            }
+        }
 
-        Thread.sleep(1000);
-
-        ((JavascriptExecutor) driver).executeScript(
-                "arguments[0].click();", loginBtn
-        );
+        // fallback (JS click)
+        ((org.openqa.selenium.JavascriptExecutor) driver)
+                .executeScript("arguments[0].click();", loginBtn);
     }
 
     @Test(priority = 1)
@@ -69,7 +66,9 @@ public class LoggingPractice {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("loginusername")))
                 .sendKeys("Admin");
 
-        driver.findElement(By.id("loginpassword")).sendKeys("admin!");
+        driver.findElement(By.id("loginpassword"))
+                .sendKeys("admin!");
+
         driver.findElement(By.xpath("//button[text()='Log in']")).click();
 
         try {
@@ -84,7 +83,7 @@ public class LoggingPractice {
             logger.info("Alert accepted");
 
         } catch (Exception e) {
-            logger.error("No alert displayed for invalid login");
+            logger.error("Expected alert not found");
         }
     }
 
@@ -96,7 +95,9 @@ public class LoggingPractice {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("loginusername")))
                 .sendKeys("Admin");
 
-        driver.findElement(By.id("loginpassword")).sendKeys("admin");
+        driver.findElement(By.id("loginpassword"))
+                .sendKeys("admin");
+
         driver.findElement(By.xpath("//button[text()='Log in']")).click();
 
         String actualUser = wait.until(
@@ -108,7 +109,9 @@ public class LoggingPractice {
     }
 
     @AfterMethod
-    public void tearDown() {
-        driver.quit();
+    public void after() {
+        if (driver != null) {
+            driver.quit();
+        }
     }
 }
