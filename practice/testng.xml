@@ -23,6 +23,7 @@
       <class name="testng_practice.ParameterizationDemo"/>
       <class name="testng_practice.Params"/>
     -->
+    <classes>
     <class name="testng_practice.ListenerImplementation"/>
     <class name="testng_practice.ListenerPractice"/>
     <class name="testng_practice.LoggingPractice"/>
