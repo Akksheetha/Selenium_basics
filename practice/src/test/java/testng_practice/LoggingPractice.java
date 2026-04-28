@@ -13,63 +13,84 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class LoggingPractice {
-	private static Logger logger = LogManager.getLogger(LoggingPractice.class);
-	WebDriver driver;
+    private static Logger logger = LogManager.getLogger(LoggingPractice.class);
+    WebDriver driver;
 
     @BeforeMethod
     public void beforeMethod() {
-  	  logger.info("Starting the test");
-  	  ChromeOptions options=new ChromeOptions();
-  	  driver=new ChromeDriver(options);
-  	  options.addArguments("--start-maximize");
-  	  driver.get("https://demoblaze.com/");
-  	  driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-  	  logger.info("DemoBlaze Website opened");
-    }
-    
-    @Test(priority = 2)
-    public void validation() {
-    	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-    	WebElement loginBtn = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("login2")));
-    	((JavascriptExecutor) driver).executeScript("arguments[0].click();", loginBtn);
-  	  driver.findElement(By.id("loginusername")).sendKeys("Admin");
-  	  driver.findElement(By.id("loginpassword")).sendKeys("admin");
-      driver.findElement(By.xpath("//button[text()='Log in']")).click();
-      String actualUser = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("nameofuser"))).getText();
-      logger.info("Login successful with valid credentials");
-      logger.debug("Logged in with username=Admin and password=admin");
-    }
-    
-    
-    @Test(priority = 1)
-    public void invaliduser() {
-    	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-    	WebElement loginBtn = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("login2")));
-    	((JavascriptExecutor) driver).executeScript("arguments[0].click();", loginBtn);
-	  	driver.findElement(By.id("loginusername")).sendKeys("Admin");
-	  	driver.findElement(By.id("loginpassword")).sendKeys("admin!");
-	    driver.findElement(By.xpath("//button[text()='Log in']")).click();
-	    try {
-	        Alert alert = wait.until(ExpectedConditions.alertIsPresent());
-	        String msg = alert.getText();
-	        System.out.println(msg);
-	        logger.info("Trying to login with invalid password");
-	        logger.warn("Alert for invalid password popped");
-	        alert.accept();
-	        logger.info("Alert accepted");
+        logger.info("Starting the test");
 
-	    } catch (Exception e) {
-	        String user = driver.findElement(By.id("nameofuser")).getText();
-	        logger.error("Logged in failed as "+user);
-	    }
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--start-maximized");   
+
+        driver = new ChromeDriver(options);
+
+        driver.get("https://demoblaze.com/");
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
+        logger.info("DemoBlaze Website opened");
     }
-    
+
+    @Test(priority = 2)
+    public void validation() throws InterruptedException {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        WebElement loginBtn = wait.until(
+                ExpectedConditions.elementToBeClickable(By.id("login2")) 
+        );
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", loginBtn);
+        Thread.sleep(500);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", loginBtn);
+
+        driver.findElement(By.id("loginusername")).sendKeys("Admin");
+        driver.findElement(By.id("loginpassword")).sendKeys("admin");
+        driver.findElement(By.xpath("//button[text()='Log in']")).click();
+
+        String actualUser = wait.until(
+                ExpectedConditions.visibilityOfElementLocated(By.id("nameofuser"))
+        ).getText();
+
+        logger.info("Login successful with valid credentials");
+        logger.debug("Logged in with username=Admin and password=admin");
+    }
+
+    @Test(priority = 1)
+    public void invaliduser() throws InterruptedException {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        WebElement loginBtn = wait.until(
+                ExpectedConditions.elementToBeClickable(By.id("login2")) 
+        );
+
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", loginBtn);
+        Thread.sleep(500);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", loginBtn);
+
+        driver.findElement(By.id("loginusername")).sendKeys("Admin");
+        driver.findElement(By.id("loginpassword")).sendKeys("admin!");
+        driver.findElement(By.xpath("//button[text()='Log in']")).click();
+
+        try {
+            Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+            String msg = alert.getText();
+            System.out.println(msg);
+
+            logger.info("Trying to login with invalid password");
+            logger.warn("Alert for invalid password popped");
+
+            alert.accept();
+            logger.info("Alert accepted");
+
+        } catch (Exception e) {
+            String user = driver.findElement(By.id("nameofuser")).getText();
+            logger.error("Logged in failed as " + user);
+        }
+    }
 
     @AfterMethod
     public void after() {

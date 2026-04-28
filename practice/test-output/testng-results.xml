@@ -2,32 +2,32 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-04-28T10:48:05 IST" name="Default suite" finished-at="2026-04-28T10:48:20 IST" duration-ms="14971">
+  <suite started-at="2026-04-28T16:00:48 IST" name="Default suite" finished-at="2026-04-28T16:01:04 IST" duration-ms="16220">
     <groups>
     </groups>
-    <test started-at="2026-04-28T10:48:05 IST" name="Default test" finished-at="2026-04-28T10:48:20 IST" duration-ms="14971">
+    <test started-at="2026-04-28T16:00:48 IST" name="Default test" finished-at="2026-04-28T16:01:04 IST" duration-ms="16220">
       <class name="testng_practice.LoggingPractice">
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:testng_practice.LoggingPractice@1458ed9c]" started-at="2026-04-28T10:48:05 IST" name="beforeMethod" finished-at="2026-04-28T10:48:10 IST" duration-ms="4548" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:testng_practice.LoggingPractice@e383572]" started-at="2026-04-28T16:00:48 IST" name="beforeMethod" finished-at="2026-04-28T16:00:53 IST" duration-ms="5102" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="invaliduser()[pri:1, instance:testng_practice.LoggingPractice@1458ed9c]" started-at="2026-04-28T10:48:10 IST" name="invaliduser" finished-at="2026-04-28T10:48:12 IST" duration-ms="2348" status="PASS">
+        <test-method signature="invaliduser()[pri:1, instance:testng_practice.LoggingPractice@e383572]" started-at="2026-04-28T16:00:53 IST" name="invaliduser" finished-at="2026-04-28T16:00:56 IST" duration-ms="3025" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invaliduser -->
-        <test-method is-config="true" signature="after()[pri:0, instance:testng_practice.LoggingPractice@1458ed9c]" started-at="2026-04-28T10:48:12 IST" name="after" finished-at="2026-04-28T10:48:13 IST" duration-ms="335" status="PASS">
+        <test-method is-config="true" signature="after()[pri:0, instance:testng_practice.LoggingPractice@e383572]" started-at="2026-04-28T16:00:56 IST" name="after" finished-at="2026-04-28T16:00:56 IST" duration-ms="359" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- after -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:testng_practice.LoggingPractice@1458ed9c]" started-at="2026-04-28T10:48:13 IST" name="beforeMethod" finished-at="2026-04-28T10:48:16 IST" duration-ms="3714" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:testng_practice.LoggingPractice@e383572]" started-at="2026-04-28T16:00:56 IST" name="beforeMethod" finished-at="2026-04-28T16:00:59 IST" duration-ms="3214" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="validation()[pri:2, instance:testng_practice.LoggingPractice@1458ed9c]" started-at="2026-04-28T10:48:16 IST" name="validation" finished-at="2026-04-28T10:48:20 IST" duration-ms="3563" status="PASS">
+        <test-method signature="validation()[pri:2, instance:testng_practice.LoggingPractice@e383572]" started-at="2026-04-28T16:00:59 IST" name="validation" finished-at="2026-04-28T16:01:04 IST" duration-ms="4176" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validation -->
-        <test-method is-config="true" signature="after()[pri:0, instance:testng_practice.LoggingPractice@1458ed9c]" started-at="2026-04-28T10:48:20 IST" name="after" finished-at="2026-04-28T10:48:20 IST" duration-ms="363" status="PASS">
+        <test-method is-config="true" signature="after()[pri:0, instance:testng_practice.LoggingPractice@e383572]" started-at="2026-04-28T16:01:04 IST" name="after" finished-at="2026-04-28T16:01:04 IST" duration-ms="268" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- after -->
