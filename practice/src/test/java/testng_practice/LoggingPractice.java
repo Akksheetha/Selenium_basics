@@ -22,11 +22,14 @@ public class LoggingPractice {
     WebDriver driver;
 
     @BeforeMethod
-    public void beforeMethod() {
+    public void beforeMethod() throws InterruptedException {
         logger.info("Starting the test");
 
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--start-maximized");   
+        options.addArguments("--start-maximized");  
+        options.addArguments("--disable-notifications");
+        options.addArguments("--disable-infobars");
+        options.addArguments("--disable-extensions");
 
         driver = new ChromeDriver(options);
 
@@ -34,17 +37,21 @@ public class LoggingPractice {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
         logger.info("DemoBlaze Website opened");
+        Thread.sleep(3000);
     }
 
     @Test(priority = 2)
     public void validation() throws InterruptedException {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-        WebElement loginBtn = wait.until(
-                ExpectedConditions.elementToBeClickable(By.id("login2")) 
+        ((JavascriptExecutor) driver).executeScript(
+            "document.querySelector('.carousel').remove();"
         );
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", loginBtn);
-        Thread.sleep(500);
+
+        Thread.sleep(1000);
+
+        // Now click login
+        WebElement loginBtn = driver.findElement(By.id("login2"));
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", loginBtn);
 
         driver.findElement(By.id("loginusername")).sendKeys("Admin");
@@ -63,12 +70,14 @@ public class LoggingPractice {
     public void invaliduser() throws InterruptedException {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-        WebElement loginBtn = wait.until(
-                ExpectedConditions.elementToBeClickable(By.id("login2")) 
+        ((JavascriptExecutor) driver).executeScript(
+            "document.querySelector('.carousel').remove();"
         );
 
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", loginBtn);
-        Thread.sleep(500);
+        Thread.sleep(1000);
+
+        // Now click login
+        WebElement loginBtn = driver.findElement(By.id("login2"));
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", loginBtn);
 
         driver.findElement(By.id("loginusername")).sendKeys("Admin");
