@@ -1,304 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="9" passed="6" failed="0" skipped="3">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-04-22T17:34:42 IST" name="Default suite" finished-at="2026-04-22T17:35:20 IST" duration-ms="38626">
+  <suite started-at="2026-04-28T10:32:15 IST" name="Default suite" finished-at="2026-04-28T10:32:31 IST" duration-ms="16201">
     <groups>
     </groups>
-    <test started-at="2026-04-22T17:34:42 IST" name="Default test" finished-at="2026-04-22T17:35:20 IST" duration-ms="38626">
-      <class name="testng_practice.TutorialsNinjaLoggingandListener">
-        <test-method is-config="true" signature="BeforeMethod()[pri:0, instance:testng_practice.TutorialsNinjaLoggingandListener@1800a575]" started-at="2026-04-22T17:34:43 IST" name="BeforeMethod" finished-at="2026-04-22T17:34:47 IST" duration-ms="3752" status="PASS">
+    <test started-at="2026-04-28T10:32:15 IST" name="Default test" finished-at="2026-04-28T10:32:31 IST" duration-ms="16201">
+      <class name="testng_practice.LoggingPractice">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:testng_practice.LoggingPractice@1458ed9c]" started-at="2026-04-28T10:32:15 IST" name="beforeMethod" finished-at="2026-04-28T10:32:20 IST" duration-ms="5357" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- BeforeMethod -->
-        <test-method is-config="true" signature="BeforeMethod()[pri:0, instance:testng_practice.TutorialsNinjaLoggingandListener@1800a575]" started-at="2026-04-22T17:34:43 IST" name="BeforeMethod" finished-at="2026-04-22T17:34:47 IST" duration-ms="3752" status="PASS">
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="invaliduser()[pri:1, instance:testng_practice.LoggingPractice@1458ed9c]" started-at="2026-04-28T10:32:20 IST" name="invaliduser" finished-at="2026-04-28T10:32:22 IST" duration-ms="2473" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- BeforeMethod -->
-        <test-method is-config="true" signature="BeforeMethod()[pri:0, instance:testng_practice.TutorialsNinjaLoggingandListener@1800a575]" started-at="2026-04-22T17:34:43 IST" name="BeforeMethod" finished-at="2026-04-22T17:34:47 IST" duration-ms="3751" status="PASS">
+        </test-method> <!-- invaliduser -->
+        <test-method is-config="true" signature="after()[pri:0, instance:testng_practice.LoggingPractice@1458ed9c]" started-at="2026-04-28T10:32:22 IST" name="after" finished-at="2026-04-28T10:32:23 IST" duration-ms="351" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- BeforeMethod -->
-        <test-method signature="validLoginTest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testng_practice.TutorialsNinjaLoggingandListener@1800a575]" started-at="2026-04-22T17:34:47 IST" name="validLoginTest" data-provider="tutorialsninjadata" finished-at="2026-04-22T17:34:54 IST" duration-ms="7319" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[abc32@gmail.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Password@123]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[valid]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- after -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:testng_practice.LoggingPractice@1458ed9c]" started-at="2026-04-28T10:32:23 IST" name="beforeMethod" finished-at="2026-04-28T10:32:27 IST" duration-ms="3743" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validLoginTest -->
-        <test-method signature="validLoginTest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testng_practice.TutorialsNinjaLoggingandListener@1800a575]" started-at="2026-04-22T17:34:47 IST" name="validLoginTest" data-provider="tutorialsninjadata" finished-at="2026-04-22T17:34:47 IST" duration-ms="22" status="SKIP">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[abc@gmail.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[1234.0]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[invalid]]>
-              </value>
-            </param>
-          </params>
-          <exception class="org.testng.SkipException">
-            <message>
-              <![CDATA[Skipping invalid data]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.testng.SkipException: Skipping invalid data
-at testng_practice.TutorialsNinjaLoggingandListener.validLoginTest(TutorialsNinjaLoggingandListener.java:29)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:81)
-at org.testng.internal.thread.Async$AsyncTask.run(Async.java:34)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-at java.base/java.lang.Thread.run(Thread.java:1583)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.testng.SkipException -->
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="validation()[pri:2, instance:testng_practice.LoggingPractice@1458ed9c]" started-at="2026-04-28T10:32:27 IST" name="validation" finished-at="2026-04-28T10:32:30 IST" duration-ms="3908" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validLoginTest -->
-        <test-method signature="validLoginTest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testng_practice.TutorialsNinjaLoggingandListener@1800a575]" started-at="2026-04-22T17:34:47 IST" name="validLoginTest" data-provider="tutorialsninjadata" finished-at="2026-04-22T17:34:47 IST" duration-ms="22" status="SKIP">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[test@gmail.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[4321.0]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[invalid]]>
-              </value>
-            </param>
-          </params>
-          <exception class="org.testng.SkipException">
-            <message>
-              <![CDATA[Skipping invalid data]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.testng.SkipException: Skipping invalid data
-at testng_practice.TutorialsNinjaLoggingandListener.validLoginTest(TutorialsNinjaLoggingandListener.java:29)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:81)
-at org.testng.internal.thread.Async$AsyncTask.run(Async.java:34)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-at java.base/java.lang.Thread.run(Thread.java:1583)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.testng.SkipException -->
+        </test-method> <!-- validation -->
+        <test-method is-config="true" signature="after()[pri:0, instance:testng_practice.LoggingPractice@1458ed9c]" started-at="2026-04-28T10:32:30 IST" name="after" finished-at="2026-04-28T10:32:31 IST" duration-ms="265" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validLoginTest -->
-        <test-method is-config="true" signature="AfterMethod()[pri:0, instance:testng_practice.TutorialsNinjaLoggingandListener@1800a575]" started-at="2026-04-22T17:34:47 IST" name="AfterMethod" finished-at="2026-04-22T17:34:49 IST" duration-ms="2159" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- AfterMethod -->
-        <test-method is-config="true" signature="AfterMethod()[pri:0, instance:testng_practice.TutorialsNinjaLoggingandListener@1800a575]" started-at="2026-04-22T17:34:47 IST" name="AfterMethod" finished-at="2026-04-22T17:34:49 IST" duration-ms="2321" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- AfterMethod -->
-        <test-method is-config="true" signature="AfterMethod()[pri:0, instance:testng_practice.TutorialsNinjaLoggingandListener@1800a575]" started-at="2026-04-22T17:34:54 IST" name="AfterMethod" finished-at="2026-04-22T17:34:54 IST" duration-ms="254" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- AfterMethod -->
-        <test-method is-config="true" signature="BeforeMethod()[pri:0, instance:testng_practice.TutorialsNinjaLoggingandListener@1800a575]" started-at="2026-04-22T17:34:55 IST" name="BeforeMethod" finished-at="2026-04-22T17:34:59 IST" duration-ms="4812" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- BeforeMethod -->
-        <test-method is-config="true" signature="BeforeMethod()[pri:0, instance:testng_practice.TutorialsNinjaLoggingandListener@1800a575]" started-at="2026-04-22T17:34:55 IST" name="BeforeMethod" finished-at="2026-04-22T17:34:59 IST" duration-ms="4822" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- BeforeMethod -->
-        <test-method is-config="true" signature="BeforeMethod()[pri:0, instance:testng_practice.TutorialsNinjaLoggingandListener@1800a575]" started-at="2026-04-22T17:34:55 IST" name="BeforeMethod" finished-at="2026-04-22T17:34:59 IST" duration-ms="4810" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- BeforeMethod -->
-        <test-method signature="invalidLoginTest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testng_practice.TutorialsNinjaLoggingandListener@1800a575]" started-at="2026-04-22T17:34:59 IST" name="invalidLoginTest" data-provider="tutorialsninjadata" finished-at="2026-04-22T17:34:59 IST" duration-ms="4" status="SKIP">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[abc32@gmail.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Password@123]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[valid]]>
-              </value>
-            </param>
-          </params>
-          <exception class="org.testng.SkipException">
-            <message>
-              <![CDATA[Skipping valid data]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.testng.SkipException: Skipping valid data
-at testng_practice.TutorialsNinjaLoggingandListener.invalidLoginTest(TutorialsNinjaLoggingandListener.java:49)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:81)
-at org.testng.internal.thread.Async$AsyncTask.run(Async.java:34)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-at java.base/java.lang.Thread.run(Thread.java:1583)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.testng.SkipException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- invalidLoginTest -->
-        <test-method signature="invalidLoginTest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testng_practice.TutorialsNinjaLoggingandListener@1800a575]" started-at="2026-04-22T17:34:59 IST" name="invalidLoginTest" data-provider="tutorialsninjadata" finished-at="2026-04-22T17:35:09 IST" duration-ms="9242" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[test@gmail.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[4321.0]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[invalid]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- invalidLoginTest -->
-        <test-method is-config="true" signature="AfterMethod()[pri:0, instance:testng_practice.TutorialsNinjaLoggingandListener@1800a575]" started-at="2026-04-22T17:34:59 IST" name="AfterMethod" finished-at="2026-04-22T17:35:02 IST" duration-ms="3047" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- AfterMethod -->
-        <test-method signature="invalidLoginTest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testng_practice.TutorialsNinjaLoggingandListener@1800a575]" started-at="2026-04-22T17:34:59 IST" name="invalidLoginTest" data-provider="tutorialsninjadata" finished-at="2026-04-22T17:35:09 IST" duration-ms="9354" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[abc@gmail.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[1234.0]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[invalid]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- invalidLoginTest -->
-        <test-method is-config="true" signature="AfterMethod()[pri:0, instance:testng_practice.TutorialsNinjaLoggingandListener@1800a575]" started-at="2026-04-22T17:35:09 IST" name="AfterMethod" finished-at="2026-04-22T17:35:09 IST" duration-ms="210" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- AfterMethod -->
-        <test-method is-config="true" signature="AfterMethod()[pri:0, instance:testng_practice.TutorialsNinjaLoggingandListener@1800a575]" started-at="2026-04-22T17:35:09 IST" name="AfterMethod" finished-at="2026-04-22T17:35:09 IST" duration-ms="233" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- AfterMethod -->
-        <test-method is-config="true" signature="BeforeMethod()[pri:0, instance:testng_practice.TutorialsNinjaLoggingandListener@1800a575]" started-at="2026-04-22T17:35:09 IST" name="BeforeMethod" finished-at="2026-04-22T17:35:10 IST" duration-ms="1212" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- BeforeMethod -->
-        <test-method signature="searchProduct(java.lang.String)[pri:0, instance:testng_practice.TutorialsNinjaLoggingandListener@1800a575]" started-at="2026-04-22T17:35:10 IST" name="searchProduct" data-provider="searchData" finished-at="2026-04-22T17:35:14 IST" depends-on-methods="testng_practice.TutorialsNinjaLoggingandListener.validLoginTest" duration-ms="3477" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[iPhone]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- searchProduct -->
-        <test-method is-config="true" signature="AfterMethod()[pri:0, instance:testng_practice.TutorialsNinjaLoggingandListener@1800a575]" started-at="2026-04-22T17:35:14 IST" name="AfterMethod" finished-at="2026-04-22T17:35:14 IST" duration-ms="154" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- AfterMethod -->
-        <test-method is-config="true" signature="BeforeMethod()[pri:0, instance:testng_practice.TutorialsNinjaLoggingandListener@1800a575]" started-at="2026-04-22T17:35:14 IST" name="BeforeMethod" finished-at="2026-04-22T17:35:15 IST" duration-ms="1127" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- BeforeMethod -->
-        <test-method signature="searchProduct(java.lang.String)[pri:0, instance:testng_practice.TutorialsNinjaLoggingandListener@1800a575]" started-at="2026-04-22T17:35:15 IST" name="searchProduct" data-provider="searchData" finished-at="2026-04-22T17:35:17 IST" depends-on-methods="testng_practice.TutorialsNinjaLoggingandListener.validLoginTest" duration-ms="1806" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Macbook]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- searchProduct -->
-        <test-method is-config="true" signature="AfterMethod()[pri:0, instance:testng_practice.TutorialsNinjaLoggingandListener@1800a575]" started-at="2026-04-22T17:35:17 IST" name="AfterMethod" finished-at="2026-04-22T17:35:17 IST" duration-ms="247" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- AfterMethod -->
-        <test-method is-config="true" signature="BeforeMethod()[pri:0, instance:testng_practice.TutorialsNinjaLoggingandListener@1800a575]" started-at="2026-04-22T17:35:17 IST" name="BeforeMethod" finished-at="2026-04-22T17:35:18 IST" duration-ms="1048" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- BeforeMethod -->
-        <test-method signature="searchProduct(java.lang.String)[pri:0, instance:testng_practice.TutorialsNinjaLoggingandListener@1800a575]" started-at="2026-04-22T17:35:18 IST" name="searchProduct" data-provider="searchData" finished-at="2026-04-22T17:35:20 IST" depends-on-methods="testng_practice.TutorialsNinjaLoggingandListener.validLoginTest" duration-ms="1838" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Samsung]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- searchProduct -->
-        <test-method is-config="true" signature="AfterMethod()[pri:0, instance:testng_practice.TutorialsNinjaLoggingandListener@1800a575]" started-at="2026-04-22T17:35:20 IST" name="AfterMethod" finished-at="2026-04-22T17:35:20 IST" duration-ms="333" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- AfterMethod -->
-      </class> <!-- testng_practice.TutorialsNinjaLoggingandListener -->
+        </test-method> <!-- after -->
+      </class> <!-- testng_practice.LoggingPractice -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

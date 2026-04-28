@@ -33,11 +33,11 @@ public class LoggingPractice {
     
     @Test(priority = 2)
     public void validation() {
-  	  driver.findElement(By.id("login2")).click();
+    	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    	wait.until(ExpectedConditions.elementToBeClickable(By.id("login2"))).click();
   	  driver.findElement(By.id("loginusername")).sendKeys("Admin");
   	  driver.findElement(By.id("loginpassword")).sendKeys("admin");
       driver.findElement(By.xpath("//button[text()='Log in']")).click();
-      WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
       String actualUser = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("nameofuser"))).getText();
       logger.info("Login successful with valid credentials");
       logger.debug("Logged in with username=Admin and password=admin");
@@ -46,11 +46,11 @@ public class LoggingPractice {
     
     @Test(priority = 1)
     public void invaliduser() {
-    	driver.findElement(By.id("login2")).click();
+    	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    	wait.until(ExpectedConditions.elementToBeClickable(By.id("login2"))).click();
 	  	driver.findElement(By.id("loginusername")).sendKeys("Admin");
 	  	driver.findElement(By.id("loginpassword")).sendKeys("admin!");
 	    driver.findElement(By.xpath("//button[text()='Log in']")).click();
-	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	    try {
 	        Alert alert = wait.until(ExpectedConditions.alertIsPresent());
 	        String msg = alert.getText();
