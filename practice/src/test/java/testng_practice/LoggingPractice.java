@@ -18,69 +18,55 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class LoggingPractice {
+
     private static Logger logger = LogManager.getLogger(LoggingPractice.class);
     WebDriver driver;
+    WebDriverWait wait;
 
     @BeforeMethod
-    public void beforeMethod() throws InterruptedException {
+    public void setup() {
         logger.info("Starting the test");
 
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--start-maximized");  
-        options.addArguments("--disable-notifications");
-        options.addArguments("--disable-infobars");
-        options.addArguments("--disable-extensions");
+        options.addArguments("--start-maximized");
 
         driver = new ChromeDriver(options);
+        wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 
         driver.get("https://demoblaze.com/");
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
         logger.info("DemoBlaze Website opened");
-        Thread.sleep(3000);
     }
 
-    @Test(priority = 2)
-    public void validation() throws InterruptedException {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    // 🔥 COMMON METHOD (handles click issue)
+    public void clickLogin() {
 
-        ((JavascriptExecutor) driver).executeScript(
-            "document.querySelector('.carousel').remove();"
+        // Wait for carousel overlay to disappear
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(
+                By.cssSelector(".carousel-item.active img")
+        ));
+
+        WebElement loginBtn = wait.until(
+                ExpectedConditions.elementToBeClickable(By.id("login2"))
         );
 
-        Thread.sleep(1000);
-
-        // Now click login
-        WebElement loginBtn = driver.findElement(By.id("login2"));
-        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", loginBtn);
-
-        driver.findElement(By.id("loginusername")).sendKeys("Admin");
-        driver.findElement(By.id("loginpassword")).sendKeys("admin");
-        driver.findElement(By.xpath("//button[text()='Log in']")).click();
-
-        String actualUser = wait.until(
-                ExpectedConditions.visibilityOfElementLocated(By.id("nameofuser"))
-        ).getText();
-
-        logger.info("Login successful with valid credentials");
-        logger.debug("Logged in with username=Admin and password=admin");
+        try {
+            loginBtn.click();
+        } catch (Exception e) {
+            // fallback if intercepted
+            ((JavascriptExecutor) driver)
+                    .executeScript("arguments[0].click();", loginBtn);
+        }
     }
 
     @Test(priority = 1)
-    public void invaliduser() throws InterruptedException {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    public void invaliduser() {
 
-        ((JavascriptExecutor) driver).executeScript(
-            "document.querySelector('.carousel').remove();"
-        );
+        clickLogin();
 
-        Thread.sleep(1000);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("loginusername")))
+                .sendKeys("Admin");
 
-        // Now click login
-        WebElement loginBtn = driver.findElement(By.id("login2"));
-        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", loginBtn);
-
-        driver.findElement(By.id("loginusername")).sendKeys("Admin");
         driver.findElement(By.id("loginpassword")).sendKeys("admin!");
         driver.findElement(By.xpath("//button[text()='Log in']")).click();
 
@@ -96,13 +82,31 @@ public class LoggingPractice {
             logger.info("Alert accepted");
 
         } catch (Exception e) {
-            String user = driver.findElement(By.id("nameofuser")).getText();
-            logger.error("Logged in failed as " + user);
+            logger.error("No alert displayed for invalid login");
         }
     }
 
+    @Test(priority = 2)
+    public void validation() {
+
+        clickLogin();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("loginusername")))
+                .sendKeys("Admin");
+
+        driver.findElement(By.id("loginpassword")).sendKeys("admin");
+        driver.findElement(By.xpath("//button[text()='Log in']")).click();
+
+        String actualUser = wait.until(
+                ExpectedConditions.visibilityOfElementLocated(By.id("nameofuser"))
+        ).getText();
+
+        logger.info("Login successful with valid credentials");
+        logger.debug("Logged in user: " + actualUser);
+    }
+
     @AfterMethod
-    public void after() {
+    public void tearDown() {
         driver.quit();
     }
 }
