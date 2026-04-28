@@ -6,7 +6,9 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -34,7 +36,8 @@ public class LoggingPractice {
     @Test(priority = 2)
     public void validation() {
     	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-    	wait.until(ExpectedConditions.elementToBeClickable(By.id("login2"))).click();
+    	WebElement loginBtn = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("login2")));
+    	((JavascriptExecutor) driver).executeScript("arguments[0].click();", loginBtn);
   	  driver.findElement(By.id("loginusername")).sendKeys("Admin");
   	  driver.findElement(By.id("loginpassword")).sendKeys("admin");
       driver.findElement(By.xpath("//button[text()='Log in']")).click();
@@ -47,7 +50,8 @@ public class LoggingPractice {
     @Test(priority = 1)
     public void invaliduser() {
     	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-    	wait.until(ExpectedConditions.elementToBeClickable(By.id("login2"))).click();
+    	WebElement loginBtn = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("login2")));
+    	((JavascriptExecutor) driver).executeScript("arguments[0].click();", loginBtn);
 	  	driver.findElement(By.id("loginusername")).sendKeys("Admin");
 	  	driver.findElement(By.id("loginpassword")).sendKeys("admin!");
 	    driver.findElement(By.xpath("//button[text()='Log in']")).click();

@@ -3,14 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testng_practice.TutorialsNinjaLoggingandListener">
+      <class name="testng_practice.LoggingPractice">
         <methods>
-          <include name="validLoginTest" invocation-numbers="0 1"/>
-          <include name="invalidLoginTest" invocation-numbers="2"/>
-          <include name="BeforeMethod"/>
-          <include name="AfterMethod"/>
+          <include name="after"/>
+          <include name="validation"/>
+          <include name="beforeMethod"/>
         </methods>
-      </class> <!-- testng_practice.TutorialsNinjaLoggingandListener -->
+      </class> <!-- testng_practice.LoggingPractice -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
