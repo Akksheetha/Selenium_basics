@@ -1,79 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-05-04T15:03:16 IST" name="Default suite" finished-at="2026-05-04T15:03:51 IST" duration-ms="35256">
+  <suite started-at="2026-05-05T15:15:16 IST" name="Default suite" finished-at="2026-05-05T15:15:27 IST" duration-ms="10812">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.testngrunner@510f3d34]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TutorialsNinjaLoginRunner@d35dea7]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2026-05-04T15:03:16 IST" name="Default test" finished-at="2026-05-04T15:03:51 IST" duration-ms="35256">
-      <class name="runner.testngrunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:runner.testngrunner@510f3d34]" started-at="2026-05-04T15:03:16 IST" name="setUpClass" finished-at="2026-05-04T15:03:17 IST" duration-ms="1130" status="PASS">
+    <test started-at="2026-05-05T15:15:16 IST" name="Default test" finished-at="2026-05-05T15:15:27 IST" duration-ms="10812">
+      <class name="runner.TutorialsNinjaLoginRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:runner.TutorialsNinjaLoginRunner@d35dea7]" started-at="2026-05-05T15:15:16 IST" name="setUpClass" finished-at="2026-05-05T15:15:17 IST" duration-ms="931" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@6794ac0b]]>
+                <![CDATA[org.testng.TestRunner@2b5183ec]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.testngrunner@510f3d34]" started-at="2026-05-04T15:03:17 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T15:03:32 IST" duration-ms="15025" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TutorialsNinjaLoginRunner@d35dea7]" started-at="2026-05-05T15:15:17 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-05T15:15:27 IST" duration-ms="9781" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Login with valid credentials"]]>
+                <![CDATA["Logging into the site"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Login to DemoBlaze site"]]>
+                <![CDATA["Tutorials Ninja Login Page"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.testngrunner@510f3d34]" started-at="2026-05-04T15:03:32 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T15:03:41 IST" duration-ms="9619" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Login with invalid credentials"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Login to DemoBlaze site"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.testngrunner@510f3d34]" started-at="2026-05-04T15:03:41 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T15:03:51 IST" duration-ms="9389" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Login without credentials"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Login to DemoBlaze site"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runner.testngrunner@510f3d34]" started-at="2026-05-04T15:03:51 IST" name="tearDownClass" finished-at="2026-05-04T15:03:51 IST" duration-ms="24" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runner.TutorialsNinjaLoginRunner@d35dea7]" started-at="2026-05-05T15:15:27 IST" name="tearDownClass" finished-at="2026-05-05T15:15:27 IST" duration-ms="30" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
-      </class> <!-- runner.testngrunner -->
+      </class> <!-- runner.TutorialsNinjaLoginRunner -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

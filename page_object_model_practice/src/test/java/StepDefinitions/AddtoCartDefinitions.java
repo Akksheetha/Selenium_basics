@@ -8,10 +8,9 @@ import io.cucumber.java.Before;
 public class AddtoCartDefinitions {
 	
 	WebDriver driver;
-	@Before
 	public void setup() {
 		driver = new ChromeDriver();
-		driver.get("");
+		driver.get("https://demoblaze.com/");
 	}
 
 }
