@@ -42,7 +42,7 @@ public class MultipleRowsDataTableDefinitions {
         	String password = form.get("Password");
         	System.out.println("Password");
         	driver.findElement(By.name("password")).sendKeys(password);
-        	driver.findElement(By.xpath("//*[@class"))
+        	driver.findElement(By.xpath(""));
         }
         
 	}
